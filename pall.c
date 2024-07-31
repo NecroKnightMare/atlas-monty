@@ -5,7 +5,7 @@
  * @line_num
  * Return:
  */
-void p_all(stack_t **stack, unsigned int line_num)
+void pall(stack_t **stack, unsigned int line_num)
 {
     stack_t *now = *stack;
 

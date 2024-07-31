@@ -6,7 +6,7 @@
  * @arg: 
  * Return: no ret
  */
-void push_it(stack_t **stack, unsigned int line_num, char *arg)
+void push(stack_t **stack, unsigned int line_num, char *arg)
 {
     stack_t *new;
     int result;
