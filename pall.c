@@ -16,4 +16,5 @@ void p_all(stack_t **stack, unsigned int line_num)
         printf("%d\n", now->n);
         now = now->next;
     }
+    return (1);
 }

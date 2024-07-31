@@ -31,4 +31,5 @@ void push_it(stack_t **stack, unsigned int line_num, char *arg)
         (*stack)->prev = new;
     }
     *stack = new;
+    return (1);
 }
