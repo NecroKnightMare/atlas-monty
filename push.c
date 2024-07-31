@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
- * push_it - 
- * @stack:
- * @line_num:
- * @arg:
- * Return:
+ * push_it - add to the stack
+ * @stack: stack type
+ * @line_num: positive number to the stack
+ * @arg: 
+ * Return: no ret
  */
 void push_it(stack_t **stack, unsigned int line_num, char *arg)
 {
