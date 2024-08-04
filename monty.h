@@ -1,9 +1,9 @@
-#ifndef _MONTY_H
-#define _MONTY_H
-
-#include <stdio.h>
+#ifndef _MONTY_H_
+#define _MONTY_H_
+#define _GNU_SOURCE
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,7 +33,13 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int line_number, char *arg);
-void pall(stack_t **stack, unsigned int line_number);
+void m_push(stack_t **stack, unsigned int line_number, char *arg);
+void m_pall(stack_t **stack, unsigned int line_number);
+void m_nop(stack_t **stack, unsigned int line_number);
+void m_pint(stack_t **stack, unsigned int line_number);
+void m_pop(stack_t **stack, unsigned int line_number);
+void m_swap(stack_t **stack, unsigned int line_number);
+void m_add(stack_t **stack, unsigned int line_number);
+
 
 #endif
