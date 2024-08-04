@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 /**
  * push_it - add to the stack
  * @stack: stack type
@@ -6,7 +7,7 @@
  * @arg: 
  * Return: no ret
  */
-void push(stack_t **stack, unsigned int line_number, char *arg)
+void m_push(stack_t **stack, unsigned int line_number, char *arg)
 {
     stack_t *new;
     int result;
