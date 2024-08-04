@@ -6,7 +6,7 @@
  */
 int main (int argc, char*argv[])
 {
-    int line_num = 0;
+    int line_number = 0;
     size_t length = 0;
     ssize_t read;
     FILE *file;

@@ -5,11 +5,11 @@
  * @line_num
  * Return:
  */
-void pall(stack_t **stack, unsigned int line_num)
+void pall(stack_t **stack, unsigned int line_number)
 {
     stack_t *now = *stack;
 
-    (void)line_num;
+    (void)line_number;
 
     while (now)
     {

@@ -6,14 +6,14 @@
  * @arg: 
  * Return: no ret
  */
-void push(stack_t **stack, unsigned int line_num, char *arg)
+void push(stack_t **stack, unsigned int line_number, char *arg)
 {
     stack_t *new;
     int result;
 
     if (!arg || !atoi(arg))
     {
-        fprintf(stderr, "L%u: usage: push integer\n", line_num);
+        fprintf(stderr, "L%u: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
     }
     result = atoi(arg);
