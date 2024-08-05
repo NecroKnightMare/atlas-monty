@@ -45,12 +45,17 @@ int main (int argc, char *argv[])
 
         if (strcmp(opcode, "push") == 0)
         {
-            arg = strtok(NULL, "\t\n");
-        }
-        if (arg == NULL || !isdigit(*arg))
-        {
+            /**arg = strtok(NULL, "\t\n");**/
             fprintf(stderr, "L%d: usage: push integer\n", line_number);
             exit(EXIT_FAILURE);
+        }
+        
+        arg = strtok(NULL, "\t\n");
+        
+        if (arg == NULL || !isdigit(*arg))
+        {
+            /**fprintf(stderr, "L%d: usage: push integer\n", line_number);
+           **/ exit(EXIT_FAILURE);
         }
 
         /**n = atoi(arg);**/
@@ -58,7 +63,6 @@ int main (int argc, char *argv[])
         if (strcmp(opcode, "nop") == 0)
         {
             m_nop(&stack, line_number);
-            fprintf(stderr, "L%d: usage: push integer\n", line_number);
             exit(EXIT_FAILURE);
         }
 
