@@ -77,11 +77,6 @@ int main (int argc, char *argv[])
         {
             m_pint(&stack, line_number);
         }
-        else
-        {
-            fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-            exit(EXIT_FAILURE);
-        }
     }
     free(line);
     fclose(file);
