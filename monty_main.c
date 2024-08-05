@@ -1,6 +1,7 @@
 #define _GNU_SOURCE
 #include "monty.h"
 #include <stdio.h>
+#include <ctype.h>
 /**
  * main - void
  * @argc: argument
@@ -10,7 +11,9 @@
 int main (int argc, char *argv[])
 {
     int line_number = 0;
+    int n;
     char *line = 0;
+    char *arg = NULL;
     FILE *file;
 
     stack_t *stack = NULL;
@@ -42,25 +45,39 @@ int main (int argc, char *argv[])
         {
             continue;
         }
+
+        if (strcmp(opcode, "push") == 0)
+        {
+            arg = strtok(NULL, "\t\n");
+        }
+        if (arg == NULL || !isdigit(*arg))
+        {
+            fprintf(stderr, "L%d: usage: push integer\n", line_number);
+            exit(EXIT_FAILURE);
+        }
+
+        n = atoi(arg);
+        m_push(&stack, n);
+
         if (strcmp(opcode, "nop") == 0)
         {
             m_nop(&stack, line_number);
         }
 
-        else if (strcmp(opcode, "add") == 0)
+        if (strcmp(opcode, "add") == 0)
         {
             m_add(&stack, line_number);
         }
 
-        else if (strcmp(opcode, "swap") == 0)
+        if (strcmp(opcode, "swap") == 0)
         {
             m_swap(&stack, line_number);
         }
-          else if (strcmp(opcode, "pop") == 0)
+        if (strcmp(opcode, "pop") == 0)
         {
             m_pop(&stack, line_number);
         }
-         else if (strcmp(opcode, "pint") == 0)
+        if (strcmp(opcode, "pint") == 0)
         {
             m_pint(&stack, line_number);
         }
