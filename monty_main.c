@@ -8,7 +8,7 @@
  * @argv: filename access
  * Return: 0 if success
  */
-int main (int argc, char *argv[])
+/**int main (int argc, char *argv[])
 {
     int line_number = 0;
     int n;
@@ -17,7 +17,7 @@ int main (int argc, char *argv[])
     FILE *file;
 
     stack_t *stack = NULL;
-    /**read = getline(&line, &len, file);**/
+    read = getline(&line, &len, file);
 
 
     if (argc != 2)
@@ -33,7 +33,7 @@ int main (int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    /**read = getline(&line, &len, file);**/
+    read = getline(&line, &len, file);
     line = malloc(1024);
 
     while (fgets(line, 1024, file) != NULL)
@@ -91,3 +91,4 @@ int main (int argc, char *argv[])
     fclose(file);
     return (0);
 }
+**/
