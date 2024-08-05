@@ -7,27 +7,28 @@
  * @arg: 
  * Return: no ret
  */
-void m_push(stack_t **stack, unsigned int line_number, char *arg)
+void m_push(stack_t **stack, int n)
 {
-    stack_t *new;
-    int result;
+    stack_t *new = malloc(sizeof(stack_t));
+    /**int result;
 
-    if (!arg || !atoi(arg))
+    if ()
     {
         fprintf(stderr, "L%u: usage: push integer\n", line_number);
         exit(EXIT_FAILURE);
     }
-    result = atoi(arg);
+    result = atoi(arg);***/
     new = malloc(sizeof(stack_t));
     if (!new)
     {
         fprintf(stderr, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
-    new->n = result;
+    new->n = n;
     new->prev = NULL;
     new->next = *stack;
-    if (*stack)
+
+    if (*stack != NULL)
     {
         (*stack)->prev = new;
     }
