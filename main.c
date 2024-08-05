@@ -58,24 +58,34 @@ int main (int argc, char *argv[])
         if (strcmp(opcode, "nop") == 0)
         {
             m_nop(&stack, line_number);
+            fprintf(stderr, "L%d: usage: push integer\n", line_number);
+            exit(EXIT_FAILURE);
         }
 
         if (strcmp(opcode, "add") == 0)
         {
             m_add(&stack, line_number);
+            fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+            exit(EXIT_FAILURE);
         }
 
         if (strcmp(opcode, "swap") == 0)
         {
             m_swap(&stack, line_number);
+            fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+            exit(EXIT_FAILURE);
         }
         if (strcmp(opcode, "pop") == 0)
         {
             m_pop(&stack, line_number);
+            fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+            exit(EXIT_FAILURE);
         }
         if (strcmp(opcode, "pint") == 0)
         {
             m_pint(&stack, line_number);
+            fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+            exit(EXIT_FAILURE);
         }
     }
     free(line);
